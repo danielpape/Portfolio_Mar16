@@ -1,0 +1,332 @@
+@charset "UTF-8";
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
+{
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+body
+{
+  line-height: 1;
+}
+
+a{
+  padding-left: 0pt !important;
+  padding-right: 0pt !important;
+  color: #888;
+}
+a:link {
+    color: #709cb7;
+}
+a:visited {
+    color: #709cb7;
+}
+a:hover {
+    color: #709cb7;
+}
+a:active {
+    color: #709cb7;
+}
+i
+{
+  padding-left: 0pt !important;
+  padding-right: 0pt !important;
+}
+ol,ul
+{
+  list-style: none;
+}
+body
+{
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 1.2em;
+  font-variant-numeric: oldstyle-nums;
+  hyphens: auto;
+  line-height: 1.5em;
+  margin-bottom: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5em;
+  max-width: 33em;
+  orphans: 2;
+  text-align: left;
+  widows: 2;
+  word-spacing: normal;
+  padding-left: 10pt;
+  padding-right: 10pt;
+}
+body *
+{
+  max-width: 100%;
+}
+address,article,aside,audio,canvas,footer,header,ol,ul,dl,pre,section,table,video,img,figure
+{
+  /*margin-bottom: 1.5em;
+  margin-top: 1.5em;*/
+  padding-left: 0pt !important;
+  padding-right: 0pt !important;
+}
+p
+{
+  font-family: 'Work Sans', sans-serif;
+  line-height: 140%;
+  margin-bottom: 0em;
+  margin-top: 1.5em;
+}
+h1
+{
+  font-family: 'Molengo', serif !important;
+  color: #709cb7;
+  font-size: 1.5em;
+  line-height: 1.33333em;
+  margin-bottom: 0.66667em;
+  margin-top: 0.66667em;
+}
+h2
+{
+  font-family: 'Molengo', serif !important;
+    color: #709cb7;
+     font-size: 1.5em;
+  line-height: 1em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+h1,h2,h3,h4,h5,h6
+{
+  font-family: Georgia,serif;
+  font-weight: bold;
+  page-break-after: avoid;
+}
+ul li
+{
+  list-style-type: disc;
+}
+li
+{
+  /*list-style-position: inside;*/
+  /*text-indent: 1.5em;*/
+}
+img
+{
+  vertical-align: bottom;
+}
+
+ul.apps {
+  margin: 2em auto;
+  width: 100%;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px; }
+  ul.apps::after {
+    clear: both;
+    content: "";
+    display: table; }
+  @media all and (max-width: 660px) {
+    ul.apps {
+      width: 280px; } }
+  ul.apps li {
+    border-radius: 20px;
+    float: left;
+    display: block;
+    width: 25%;
+    height: 120px;
+    margin-bottom: 2em; 
+}
+    @media all and (max-width: 660px) {
+      ul.apps li {
+        width: 50%; } }
+  ul.apps a {
+    display: block;
+    width: 100px;
+    height: 120px;
+    line-height: 0;
+    margin: 0 auto; }
+    ul.apps a span {
+      display: block;
+      width: 100px;
+      height: 10px;
+      font-weight: 800;
+      text-align: center;
+      line-height: 1em;
+      padding: 8px 0 0;
+      color: #888; }
+    ul.apps a:hover {
+      border: 0; }
+  ul.apps img {
+    box-sizing: border-box;
+    border-radius: 20px;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    z-index: -2;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3), inset 0 0 2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25); 
+}
+
+.profilePhoto
+{
+    float: left;
+    display: inline;
+  width: 200px;
+    margin-right: 1em;
+    
+}
+@media only screen and (max-width: 400px) {
+    .profilePhoto {
+        width:100%;
+        margin-bottom: 20px;
+    }
+}
+.mark
+{
+    float: left;
+    display: inline;
+  width: 90px;
+  margin-top: -0.3em;
+    margin-right: 1em;
+}
+.topbar {
+    background-color: #709cb7;
+}
+code,samp,kbd,var
+{
+  font-family: Consolas,"Liberation Mono",Courier,monospace;
+  font-size: 0.875em;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 0.875em;
+  padding: 0 0.3em;
+  text-decoration: none;
+}
+mark
+{
+  background: #ff0;
+  color: #000;
+}
+i
+{
+  font-style: italic;
+}
+b
+{
+  font-weight: bold;
+}
+u
+{
+  text-decoration: underline;
+}
+@page
+{
+  margin-bottom: 72pt;
+  margin-top: 72pt;
+}
+@media print
+{
+  body
+  {
+    font-family: "Times New Roman",Times,serif;
+    font-size: 12pt;
+    line-height: 18pt;
+    margin-bottom: 0pt;
+    margin-top: 0pt;
+  }
+  p
+  {
+    margin-bottom: 0pt;
+    margin-top: 18pt;
+  }
+  p+p
+  {
+    text-indent: 18pt;
+  }
+  address,article,aside,audio,canvas,footer,header,ol,ul,dl,pre,section,table,video,img,figure
+  {
+    margin-bottom: 18pt;
+    margin-top: 18pt;
+  }
+  h1
+  {
+    font-size: 21pt;
+    line-height: 36pt;
+    margin-bottom: 18pt;
+    margin-top: 18pt;
+  }
+  h2
+  {
+    font-size: 18pt;
+    line-height: 18pt;
+    margin-bottom: 18pt;
+    margin-top: 18pt;
+  }
+  h3
+  {
+    font-size: 16pt;
+    line-height: 18pt;
+    margin-bottom: 18pt;
+    margin-top: 18pt;
+  }
+  h4
+  {
+    font-size: 14pt;
+    line-height: 18pt;
+    margin-bottom: 18pt;
+    margin-top: 18pt;
+  }
+  dt
+  {
+    margin-right: 18pt;
+  }
+  li
+  {
+    /*text-indent: 18pt;*/
+  }
+  blockquote
+  {
+    margin-bottom: 27pt;
+    margin-left: 27pt;
+    margin-right: 27pt;
+    margin-top: 27pt;
+  }
+  blockquote p
+  {
+    margin-bottom: 0em;
+    margin-top: 0em;
+    text-indent: 0;
+  }
+  figcaption
+  {
+    font-size: 10pt;
+    line-height: 18pt;
+    margin-bottom: 18pt;
+    margin-top: 0pt;
+  }
+  pre
+  {
+    white-space: pre-line;
+  }
+  abbr[title]
+  {
+    border-bottom: 0 none;
+  }
+  small
+  {
+    font-size: 10pt;
+    line-height: 18pt;
+    margin-bottom: 18pt;
+    margin-top: 18pt;
+  }
+  hr
+  {
+    border-bottom: 0.08333em solid #000;
+    margin-bottom: 18pt;
+    margin-top: 17pt;
+  }
+  .note
+  {
+    font-size: 10pt;
+    line-height: 18pt;
+    margin-bottom: 18pt;
+    margin-top: 18pt;
+  }
+}
