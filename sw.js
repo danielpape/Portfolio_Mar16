@@ -1,7 +1,10 @@
   var CACHE_NAME = "my_cache";
   var urlsToCache = [
     '/index.html',
-    '/script.js'
+    '/about.html',
+    '/apps.html',
+    '/contact.html',
+    '/gutenweb.css'
   ];
   self.addEventListener('install', function(event) {
     event.waitUntil( 

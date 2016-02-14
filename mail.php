@@ -1,4 +1,15 @@
-<!DOCTYPE html>
+<?php
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$website = $_POST['website'];
+$message = $_POST['message'];
+$formcontent="From: $name \n Email: $email \n Phone: $phone \n Website: $website \n Message: $message";
+$recipient = "danielwpape+websiteform@gmail.com";
+$subject = "Website Contact Form";
+$mailheader = "From: $email \r\n";
+mail($recipient, $subject, $formcontent) or die("Error!");
+?>
 <html>
    <head>
       <title>Daniel Pape - iOS Developer &amp; Designer based in London</title>
@@ -20,9 +31,7 @@
          <div id="header">
             <h1>Daniel Pape</br><b>iOS Developer &amp; Designer</b></h1>
          </div>
-         <p>I'm a mobile developer & designer working in London, England.</p>
-         <p>I have a broad skillset focused on creating well-crafted functional mobile products. I am most comfortable coding iOS apps in Swift or Objective-C, with strong UX & graphic design skills.</p>
-         <div id="contactButton"><a href="/contact.html">CONTACT ME</a></div>
+         <p>Thanks for getting in touch, I will reply when I am able.</p>
       </div>
    </body>
 </html>

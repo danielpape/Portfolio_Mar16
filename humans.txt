@@ -6,15 +6,12 @@ Twitter:@danielpape
                               
 -- SITE --
                          
-Last update: 19/11/2015 - added offline support for Chrome
-Standards: HTML5, CSS3, Javascript
+Last update: 14/02/2016 - Complete redesign and new pages
+Standards: HTML5, CSS3, Javascript, PHP
 Software: Sublime Text, Filezilla, Photoshop
-Hardware: Apple MacBook Pro Retina 13" & Toshiba Chromebook 2
+Hardware: Apple MacBook Pro Retina 13", Toshiba Chromebook 2 & Apple MacBook Pro 15"
 
 -- FONTS --
 
-Headers: Molengo
-https://www.google.com/fonts/specimen/Molengo
-
-Body: Work Sans (Light)
-https://www.google.com/fonts/specimen/Work+Sans
+Headers: Georgia
+Body: Arial

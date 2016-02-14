@@ -11,6 +11,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 body
 {
   line-height: 1;
+  color: #1C1C1E;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: rgba(0,0,0,.75);
+  letter-spacing: .01em;
 }
 
 a{
@@ -42,15 +47,15 @@ ol,ul
 body
 {
   font-family: Helvetica,Arial,sans-serif;
-  font-size: 1.2em;
-  font-variant-numeric: oldstyle-nums;
+  font-size: 1em;
+  /*font-variant-numeric: oldstyle-nums;*/
   hyphens: auto;
   line-height: 1.5em;
   margin-bottom: 1.5em;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.5em;
-  max-width: 33em;
+  max-width: 30em;
   orphans: 2;
   text-align: left;
   widows: 2;
@@ -62,6 +67,10 @@ body *
 {
   max-width: 100%;
 }
+
+body.midHeight{
+  padding-top: 18%;
+}
 address,article,aside,audio,canvas,footer,header,ol,ul,dl,pre,section,table,video,img,figure
 {
   /*margin-bottom: 1.5em;
@@ -71,33 +80,33 @@ address,article,aside,audio,canvas,footer,header,ol,ul,dl,pre,section,table,vide
 }
 p
 {
-  font-family: 'Work Sans', sans-serif;
-  line-height: 140%;
+  font-family: Arial, sans-serif;
+  line-height: 120%;
   margin-bottom: 0em;
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 h1
 {
-  font-family: 'Molengo', serif !important;
+  font-family: Georgia, serif;
   color: #709cb7;
   font-size: 1.5em;
   line-height: 1.33333em;
   margin-bottom: 0.66667em;
   margin-top: 0.66667em;
+  /*letter-spacing: -0.025em;*/
 }
 h2
 {
-  font-family: 'Molengo', serif !important;
-    color: #709cb7;
-     font-size: 1.5em;
+  font-family: Georgia, serif;
+  color: #709cb7;
+  font-size: 1.5em;
   line-height: 1em;
   margin-bottom: 1em;
   margin-top: 1em;
 }
 h1,h2,h3,h4,h5,h6
 {
-  font-family: Georgia,serif;
-  font-weight: bold;
+  font-family: Georgia, serif;
   page-break-after: avoid;
 }
 ul li
@@ -142,7 +151,9 @@ ul.apps {
     width: 100px;
     height: 120px;
     line-height: 0;
-    margin: 0 auto; }
+    margin: 0 auto; 
+    text-decoration: none;
+  }
     ul.apps a span {
       display: block;
       width: 100px;
@@ -169,8 +180,7 @@ ul.apps {
     float: left;
     display: inline;
   width: 200px;
-    margin-right: 1em;
-    
+    margin-right: 1em;    
 }
 @media only screen and (max-width: 400px) {
     .profilePhoto {
@@ -329,4 +339,95 @@ u
     margin-bottom: 18pt;
     margin-top: 18pt;
   }
+
+  nav.main-nav {
+    background:#171717;
+    height:px;
+    z-index:170;
+    margin:0 auto;
+    border-bottom:1px solid #dadada;
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    text-align: center;
+}
+}
+nav.main-nav {
+    background-color: #FAFAFA;
+    background-color: rgba(250,250,250,0.9);
+    height:44px;
+    z-index:170;
+    margin:0 auto;
+    border-top:1px solid #c0c0c0;
+    width:100%;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    text-align: center;
+}
+#menu {
+line-height: 44px;
+font-size: 0.9em;
+
+}
+
+#menu a{
+text-decoration: none;
+margin-left: 10px;
+margin-right: 10px;
+}
+
+#header {
+   border-top: 1px;
+   border-bottom: 1px;
+   border-style: solid;
+}
+span{
+   font-weight: 400;
+}
+#contactButton {
+  width: 30%;
+  margin:15px auto 20px;
+  border-radius: 2px;
+  padding: 3px 0;
+  color: #fff;
+  text-align: center;
+  background-color: #e8e8e8;
+}
+
+#contactButton a {
+  font-size: 0.9em;
+  text-decoration: none;
+  color: #1C1C1E;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form input[type="url"],
+#contact-form textarea {
+    width:100%;
+    border:0px;
+    background:#F2F2F2;
+    margin:0 0 5px;
+    padding:10px;
+    border-radius:5px;
+}
+#contact-form button[type="submit"] {
+    width: 30%;
+    border:none;
+    background:#e8e8e8;
+    color:#1C1C1E;
+    margin:15px auto 20px;
+    padding: 5px 5px 5px 5px;
+    border-radius:2px;
+    font-size: 0.9em;
+
+}
+
+label {
+  font-size: 0.9em;
 }
