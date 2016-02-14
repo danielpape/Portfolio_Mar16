@@ -166,7 +166,7 @@ ul.apps {
       color: #888; }
     ul.apps a:hover {
       border: 0; }
-  ul.apps img {
+.apps img {
     box-sizing: border-box;
     border-radius: 20px;
     height: 100px;
@@ -454,7 +454,7 @@ label {
   background-size: 100%;
 }
 
-.1000 {
+.progress1000 {
   background-image: url("/img/1000BG.jpg");
   background-size: 100%;
 }
@@ -480,12 +480,12 @@ label {
 }
 
 .last {
-  margin-bottom: 60px;
+  /*margin-bottom: 30px;*/
 }
 .app:before {
   content: "";
   float: left;
-  padding-top: 60%
+  padding-top: 72%
 }
 
 .app:after {
@@ -499,7 +499,7 @@ label {
 .appName {
   text-align: center;
   font-family: Arial, sans-serif;
-  padding-top: 80px;
+  padding-top: 20%;
   color: #1C1C1E;
   font-size: 1.1em;
   font-weight: bold;
