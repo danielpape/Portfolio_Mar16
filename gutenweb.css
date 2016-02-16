@@ -61,8 +61,8 @@ body
   text-align: left;
   widows: 2;
   word-spacing: normal;
-  padding-left: 10pt;
-  padding-right: 10pt;
+  /*padding-left: 10pt;*/
+  /*padding-right: 10pt;*/
 }
 body *
 {
@@ -72,19 +72,14 @@ body *
 body.midHeight{
   padding-top: 18%;
 }
-address,article,aside,audio,canvas,footer,header,ol,ul,dl,pre,section,table,video,img,figure
-{
-  /*margin-bottom: 1.5em;
-  margin-top: 1.5em;*/
-  padding-left: 0pt !important;
-  padding-right: 0pt !important;
-}
 p
 {
   font-family: Arial, sans-serif;
   line-height: 120%;
   margin-bottom: 0em;
   margin-top: 1em;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 h1
 {
@@ -94,6 +89,8 @@ h1
   line-height: 1.33333em;
   margin-bottom: 0.66667em;
   margin-top: 0.66667em;
+  padding-left: 10px;
+  padding-right: 10px;
   /*letter-spacing: -0.025em;*/
 }
 h2
@@ -104,6 +101,8 @@ h2
   line-height: 1em;
   margin-bottom: 1em;
   margin-top: 1em;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 h1,h2,h3,h4,h5,h6
 {
@@ -181,12 +180,17 @@ ul.apps {
     float: left;
     display: inline;
   width: 200px;
-    margin-right: 1em;    
+    margin-right: 1em; 
+    margin-left: 10px;
 }
 @media only screen and (max-width: 400px) {
     .profilePhoto {
         width:100%;
         margin-bottom: 20px;
+        margin-left: 0px;
+    }
+    .app {
+      font-size: em;
     }
 }
 .mark
@@ -385,6 +389,8 @@ margin-right: 10px;
    border-top: 1px;
    border-bottom: 1px;
    border-style: solid;
+   margin-left: 10px;
+   margin-right: 10px;
 }
 span{
    font-weight: 400;
@@ -410,12 +416,14 @@ span{
 #contact-form input[type="tel"],
 #contact-form input[type="url"],
 #contact-form textarea {
-    width:100%;
+    width:85%;
     border:0px;
     background:#F2F2F2;
-    margin:0 0 5px;
-    padding:10px;
+    padding: 10px;
     border-radius:5px;
+    margin-left: 10px;
+    margin-right: 10px;
+
 }
 #contact-form button[type="submit"] {
     width: 30%;
@@ -431,6 +439,8 @@ span{
 
 label {
   font-size: 0.9em;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .app {
@@ -505,6 +515,7 @@ label {
   font-size: 1.1em;
   font-weight: bold;
   color: #FFFFFF;
+  /*vertical-align: middle;*/
 }
 .tags{
   text-align: center;
