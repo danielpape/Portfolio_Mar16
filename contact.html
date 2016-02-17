@@ -1,23 +1,681 @@
 <!DOCTYPE html>
 <html>
-   <head>
+<head>
       <title>Daniel Pape - iOS Developer &amp; Designer based in London</title>
       <meta charset="utf-8">
       <link rel="author" type="text/plain" href="/humans.txt">
       <link rel="manifest" href="/manifest.json">
-      <link rel="stylesheet" type="text/css" href="gutenweb.css">
-      <script src="/script.js"></script>
+      <!--<link rel="stylesheet" type="text/css" href="gutenweb.css">-->
+   <!-- <script src="/script.js"></script>-->
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-      <link href='https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Work+Sans:200,400' rel='stylesheet' type='text/css'>
-      <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-32006853-1', 'auto'); ga('send', 'pageview');</script> 
-      
+     <!-- <link href='https://fonts.googleapis.com/css?family=Cabin:700,400' rel='stylesheet' type='text/css'>-->
+      <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-32006853-1', 'auto'); ga('send', 'pageview');</script>
+      <script type="text/javascript">
+      if (navigator.serviceWorker) {
+  console.log("ServiceWorkers are supported");
+  navigator.serviceWorker.register('sw.js', {
+    scope: './'
+  })
+  .then(function(reg) {
+    console.log("ServiceWorker registered with scope: ", reg.scope);
+  })
+  .catch(function(error) {
+     console.log("Failed to register ServiceWorker", error);
+  });
+}
+
+(function doesBrowserSupportNotifications() {
+    var supported = true;
+    if (!('showNotification' in ServiceWorkerRegistration.prototype)) {
+        console.warn('Notifications aren\'t supported in Service Workers.');
+        supported = false;
+    }
+
+    if (!Notification.requestPermission) {
+        console.warn("Notifications are not supported by the browser");
+        supported = false;
+    }
+
+    // Check if push messaging is supported  
+    if (!('PushManager' in window)) {
+        console.warn('Push messaging isn\'t supported.');
+        supported = false;
+    }
+
+    if(supported) {
+        console.log("Everthing is fine you can continue")
+    }
+})();
+
+function requestNotificationPermission() {
+    if (Notification.requestPermission) {
+        Notification.requestPermission(function(result) {
+            console.log("Notification permission : ", result);
+        });
+    } else {
+        console.log("Notifications not supported by this browser.");
+    }
+}
+
+function registerForPush() {
+    if (navigator.serviceWorker.controller) {
+        navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
+            serviceWorkerRegistration.pushManager.subscribe({
+                    userVisibleOnly: true
+                })
+                .then(function(subscription) {
+                    console.log("Subscription for Push successful: ", subscription.endpoint);
+                })
+                .catch(function(error) {
+                    console.log("Subscription for Push failed", error);
+                });
+        });
+    } else {
+        console.log("No active ServiceWorker");
+    }
+}
+
+(function() {
+ 
+    // Create input element for testing
+    var input = document.createElement('input');
+     
+    // Create the supports object
+    var supports = {};
+     
+    supports.autofocus   = 'autofocus' in input;
+    supports.required    = 'required' in input;
+    supports.placeholder = 'placeholder' in input;
+ 
+    // Fallback for autofocus attribute
+    if(!supports.autofocus) {
+         
+    }
+     
+    // Fallback for required attribute
+    if(!supports.required) {
+         
+    }
+ 
+    // Fallback for placeholder attribute
+    if(!supports.placeholder) {
+         
+    }
+     
+    // Change text inside send button on submit
+    var send = document.getElementById('contact-submit');
+    if(send) {
+        send.onclick = function () {
+            this.innerHTML = '...Sending';
+        }
+    }
+ 
+})();</script>
+      <style type="text/css">
+         @charset "UTF-8";
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
+{
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+body
+{
+  line-height: 1;
+  color: #373737;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: rgba(0,0,0,.75);
+  letter-spacing: .01em;
+}
+
+a{
+  padding-left: 0pt !important;
+  padding-right: 0pt !important;
+  color: #888;
+  text-decoration: none;
+}
+a:link {
+    color: #709cb7;
+}
+a:visited {
+    color: #709cb7;
+}
+a:hover {
+    color: #709cb7;
+}
+a:active {
+    color: #709cb7;
+}
+i
+{
+  padding-left: 0pt !important;
+  padding-right: 0pt !important;
+}
+ol,ul
+{
+  list-style: none;
+}
+body
+{
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 1em;
+  /*font-variant-numeric: oldstyle-nums;*/
+  hyphens: auto;
+  line-height: 1.5em;
+  margin-bottom: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5em;
+  max-width: 30em;
+  orphans: 2;
+  text-align: left;
+  widows: 2;
+  word-spacing: normal;
+  /*padding-left: 10pt;*/
+  /*padding-right: 10pt;*/
+}
+body *
+{
+  max-width: 100%;
+}
+
+body.midHeight{
+  padding-top: 18%;
+}
+p
+{
+  font-family: 'Cabin', sans-serif;
+  line-height: 120%;
+  margin-bottom: 0em;
+  margin-top: 1em;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+h1
+{
+  font-family: 'Cabin', sans-serif;
+  color: #373737;
+  font-size: 1.5em;
+  line-height: 1.33333em;
+  margin-bottom: 0.66667em;
+  margin-top: 0.66667em;
+  padding-left: 10px;
+  padding-right: 10px;
+  /*letter-spacing: 0.025em;*/
+  text-align: center;
+
+}
+h2
+{
+  font-family: 'Cabin', sans-serif;
+  color: #373737;
+  font-size: 1.5em;
+  line-height: 1em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+h1,h2,h3,h4,h5,h6
+{
+  font-family: 'Cabin', sans-serif;
+  page-break-after: avoid;
+}
+ul li
+{
+  list-style-type: disc;
+}
+li
+{
+  /*list-style-position: inside;*/
+  /*text-indent: 1.5em;*/
+}
+img
+{
+  vertical-align: bottom;
+}
+
+ul.apps {
+  margin: 2em auto;
+  width: 100%;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px; }
+  ul.apps::after {
+    clear: both;
+    content: "";
+    display: table; }
+  @media all and (max-width: 660px) {
+    ul.apps {
+      width: 280px; } }
+  ul.apps li {
+    border-radius: 20px;
+    float: left;
+    display: block;
+    width: 25%;
+    height: 120px;
+    margin-bottom: 2em; 
+}
+    @media all and (max-width: 660px) {
+      ul.apps li {
+        width: 50%; } }
+  ul.apps a {
+    display: block;
+    width: 100px;
+    height: 120px;
+    line-height: 0;
+    margin: 0 auto; 
+    text-decoration: none;
+  }
+    ul.apps a span {
+      display: block;
+      width: 100px;
+      height: 10px;
+      font-weight: 800;
+      text-align: center;
+      line-height: 1em;
+      padding: 8px 0 0;
+      color: #888; }
+    ul.apps a:hover {
+      border: 0; }
+.apps img {
+    box-sizing: border-box;
+    border-radius: 20px;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    z-index: -2;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3), inset 0 0 2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25); 
+}
+
+.profilePhoto
+{
+    float: left;
+    display: inline;
+  width: 200px;
+    margin-right: 1em; 
+    margin-left: 10px;
+}
+@media only screen and (max-width: 400px) {
+    .profilePhoto {
+        width:100%;
+        margin-bottom: 20px;
+        margin-left: 0px;
+    }
+    .app {
+      font-size: em;
+    }
+}
+.mark
+{
+    float: left;
+    display: inline;
+  width: 90px;
+  margin-top: -0.3em;
+    margin-right: 1em;
+}
+.topbar {
+    background-color: #709cb7;
+}
+code,samp,kbd,var
+{
+  font-family: Consolas,"Liberation Mono",Courier,monospace;
+  font-size: 0.875em;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 0.875em;
+  padding: 0 0.3em;
+  text-decoration: none;
+}
+mark
+{
+  background: #ff0;
+  color: #000;
+}
+i
+{
+  font-style: italic;
+}
+b
+{
+  font-weight: bold;
+}
+u
+{
+  text-decoration: underline;
+}
+@page
+{
+  margin-bottom: 72pt;
+  margin-top: 72pt;
+}
+@media print
+{
+  body
+  {
+    font-family: "Times New Roman",Times,serif;
+    font-size: 12pt;
+    line-height: 18pt;
+    margin-bottom: 0pt;
+    margin-top: 0pt;
+  }
+  p
+  {
+    margin-bottom: 0pt;
+    margin-top: 18pt;
+  }
+  p+p
+  {
+    text-indent: 18pt;
+  }
+  address,article,aside,audio,canvas,footer,header,ol,ul,dl,pre,section,table,video,img,figure
+  {
+    margin-bottom: 18pt;
+    margin-top: 18pt;
+  }
+  h1
+  {
+    font-size: 21pt;
+    line-height: 36pt;
+    margin-bottom: 18pt;
+    margin-top: 18pt;
+  }
+  h2
+  {
+    font-size: 18pt;
+    line-height: 18pt;
+    margin-bottom: 18pt;
+    margin-top: 18pt;
+  }
+  h3
+  {
+    font-size: 16pt;
+    line-height: 18pt;
+    margin-bottom: 18pt;
+    margin-top: 18pt;
+  }
+  h4
+  {
+    font-size: 14pt;
+    line-height: 18pt;
+    margin-bottom: 18pt;
+    margin-top: 18pt;
+  }
+  dt
+  {
+    margin-right: 18pt;
+  }
+  li
+  {
+    /*text-indent: 18pt;*/
+  }
+  blockquote
+  {
+    margin-bottom: 27pt;
+    margin-left: 27pt;
+    margin-right: 27pt;
+    margin-top: 27pt;
+  }
+  blockquote p
+  {
+    margin-bottom: 0em;
+    margin-top: 0em;
+    text-indent: 0;
+  }
+  figcaption
+  {
+    font-size: 10pt;
+    line-height: 18pt;
+    margin-bottom: 18pt;
+    margin-top: 0pt;
+  }
+  pre
+  {
+    white-space: pre-line;
+  }
+  abbr[title]
+  {
+    border-bottom: 0 none;
+  }
+  small
+  {
+    font-size: 10pt;
+    line-height: 18pt;
+    margin-bottom: 18pt;
+    margin-top: 18pt;
+  }
+  hr
+  {
+    border-bottom: 0.08333em solid #000;
+    margin-bottom: 18pt;
+    margin-top: 17pt;
+  }
+  .note
+  {
+    font-size: 10pt;
+    line-height: 18pt;
+    margin-bottom: 18pt;
+    margin-top: 18pt;
+  }
+
+  nav.main-nav {
+    background:#171717;
+    height:px;
+    z-index:170;
+    margin:0 auto;
+    border-bottom:1px solid #dadada;
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    text-align: center;
+}
+}
+nav.main-nav {
+    background-color: #FAFAFA;
+    background-color: rgba(250,250,250,0.9);
+    height:44px;
+    z-index:170;
+    margin:0 auto;
+    border-top:1px solid #c0c0c0;
+    width:100%;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    text-align: center;
+}
+#menu {
+line-height: 44px;
+font-size: 0.9em;
+font-family: 'Cabin',sans-serif;
+}
+
+#menu a{
+text-decoration: none;
+margin-left: 10px;
+margin-right: 10px;
+}
+
+/*#header {
+   border-top: 1px;
+   border-bottom: 1px;
+   border-style: solid;
+   margin-left: 10px;
+   margin-right: 10px;
+}*/
+span{
+   font-weight: 400;
+}
+#contactButton {
+  width: 35%;
+  margin:15px auto 20px;
+  border-radius: 2px;
+  padding: 3px 0;
+  color: #fff;
+  text-align: center;
+  background-color: #e8e8e8;
+}
+
+#contactButton a {
+  font-size: 0.95em;
+  text-decoration: none;
+  color: #1C1C1E;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form input[type="url"],
+#contact-form textarea {
+    width:85%;
+    border:0px;
+    background:#F2F2F2;
+    padding: 10px;
+    border-radius:5px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+#contact-form button[type="submit"] {
+    width: 30%;
+    border:none;
+    background:#e8e8e8;
+    color:#1C1C1E;
+    margin:15px auto 20px;
+    padding: 5px 5px 5px 5px;
+    border-radius:2px;
+    font-size: 0.9em;
+
+}
+
+label {
+  font-size: 0.9em;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.app {
+  width: 100%;
+  border-bottom: 1px;
+  border-style: solid;
+  border-color: #FFF;
+  margin-top: -18px;
+  margin-bottom:18px;
+  /*background-image: url("/img/eveBG.jpg");
+  background-size: 100%;*/
+  background-color: #787878;
+}
+
+.eve {
+  background-image: url("/img/eveBG.jpg");
+  background-size: 100%;
+}
+
+.evenap {
+  background-image: url("/img/evenapBG.jpg");
+  background-size: 100%;
+}
+
+.progress1000 {
+  background-image: url("/img/1000BG.jpg");
+  background-size: 100%;
+}
+
+.mapgrounds {
+  background-image: url("/img/mapBG.jpg");
+  background-size: 100%;
+}
+
+.copywriter {
+  background-image: url("/img/copyBG.jpg");
+  background-size: 100%;
+}
+
+.smartalert {
+  background-image: url("/img/saBG.jpg");
+  background-size: 100%;
+}
+
+.top {
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+
+.last {
+  margin-bottom: 60px;
+}
+.app:before {
+  content: "";
+  float: left;
+  padding-top: 72%
+}
+
+.app:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.appContent a{
+  text-decoration: none;
+}
+.appName {
+  text-align: center;
+  font-family: 'Cabin', sans-serif;
+  padding-top: 20%;
+  color: #1C1C1E;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #FFFFFF;
+  /*vertical-align: middle;*/
+}
+.tags{
+  text-align: center;
+}
+.appTag {
+  display: inline;
+  background-color: #E8E8E8;
+  margin: 3px 3px 3px 3px;
+  padding: 3px 5px 3px 5px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  border-radius: 5px;
+  font-size: 0.8em;
+}
+.appDescription{
+  width: 80%;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Cabin', sans-serif;
+  font-size: 0.95em;
+  color: #FFFFFF;
+}
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cabin Regular'), local('Cabin-Regular'), url(https://fonts.gstatic.com/s/cabin/v8/kJXt72Gt1LyFMZcEKAAvlKCWcynf_cDxXwCLxiixG1c.woff) format('woff');
+}
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Cabin Bold'), local('Cabin-Bold'), url(https://fonts.gstatic.com/s/cabin/v8/haOjnueK8Or1ztuuRtr8dnYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+}
+      </style>
    </head>
    <body>
       <nav class="main-nav">
          <div id="menu"><a href="/about.html">ABOUT</a> <a href="/apps.html">APPS</a> <a href="/contact.html">CONTACT</a></center>
       </nav>
       <div id="header">
-      <h1>Contact</br><b>Daniel Pape</b></h1>
+      <h1>Contact <b>Daniel Pape</b></h1>
       </div>
       <p>I'm always interested in talking to people about their projects &amp; product ideas. If you'd like me to help create your project send me a message and I'll reply promptly with my availability or advice.</p>
       <form id="contact-form" action="mail.php?v1" method="POST" style="margin-top:20px;padding-bottom:60px;">

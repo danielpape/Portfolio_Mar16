@@ -11,7 +11,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 body
 {
   line-height: 1;
-  color: #1C1C1E;
+  color: #373737;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: rgba(0,0,0,.75);
@@ -74,7 +74,7 @@ body.midHeight{
 }
 p
 {
-  font-family: Arial, sans-serif;
+  font-family: 'Cabin', sans-serif;
   line-height: 120%;
   margin-bottom: 0em;
   margin-top: 1em;
@@ -83,20 +83,22 @@ p
 }
 h1
 {
-  font-family: Georgia, serif;
-  color: #709cb7;
+  font-family: 'Cabin', sans-serif;
+  color: #373737;
   font-size: 1.5em;
   line-height: 1.33333em;
   margin-bottom: 0.66667em;
   margin-top: 0.66667em;
   padding-left: 10px;
   padding-right: 10px;
-  /*letter-spacing: -0.025em;*/
+  /*letter-spacing: 0.025em;*/
+  text-align: center;
+
 }
 h2
 {
-  font-family: Georgia, serif;
-  color: #709cb7;
+  font-family: 'Cabin', sans-serif;
+  color: #373737;
   font-size: 1.5em;
   line-height: 1em;
   margin-bottom: 1em;
@@ -106,7 +108,7 @@ h2
 }
 h1,h2,h3,h4,h5,h6
 {
-  font-family: Georgia, serif;
+  font-family: 'Cabin', sans-serif;
   page-break-after: avoid;
 }
 ul li
@@ -376,7 +378,7 @@ nav.main-nav {
 #menu {
 line-height: 44px;
 font-size: 0.9em;
-
+font-family: 'Cabin',sans-serif;
 }
 
 #menu a{
@@ -385,18 +387,18 @@ margin-left: 10px;
 margin-right: 10px;
 }
 
-#header {
+/*#header {
    border-top: 1px;
    border-bottom: 1px;
    border-style: solid;
    margin-left: 10px;
    margin-right: 10px;
-}
+}*/
 span{
    font-weight: 400;
 }
 #contactButton {
-  width: 30%;
+  width: 35%;
   margin:15px auto 20px;
   border-radius: 2px;
   padding: 3px 0;
@@ -406,7 +408,7 @@ span{
 }
 
 #contactButton a {
-  font-size: 0.9em;
+  font-size: 0.95em;
   text-decoration: none;
   color: #1C1C1E;
 }
@@ -448,8 +450,8 @@ label {
   border-bottom: 1px;
   border-style: solid;
   border-color: #FFF;
-  margin-top: -18px;
-  margin-bottom:18px;
+  /*margin-top: -18px;*/
+  /*margin-bottom:18px;*/
   /*background-image: url("/img/eveBG.jpg");
   background-size: 100%;*/
   background-color: #787878;
@@ -509,7 +511,7 @@ label {
 }
 .appName {
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: 'Cabin', sans-serif;
   padding-top: 20%;
   color: #1C1C1E;
   font-size: 1.1em;
@@ -536,7 +538,7 @@ label {
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
-  font-family: Arial, sans-serif;
+  font-family: 'Cabin', sans-serif;
   font-size: 0.95em;
   color: #FFFFFF;
 }
